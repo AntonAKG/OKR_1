@@ -1,5 +1,4 @@
 body {
-    background-color: #e0daff;
     font-family: Arial, sans-serif;
     font-size: 16px;
     color: #333;
@@ -139,4 +138,59 @@ footer {
     position: fixed;
     bottom: 0;
     left: 0;
+}
+
+.button-custom {
+    position: relative;
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.button-custom:hover {
+    background-color: #3366cc;
+}
+
+.button-custom::before {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+}
+
+.button-custom::after {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+}
+
+a:active {
+    color: black;
+}
+a:visited{
+    color: white;
+}
+
+a:link{
+    color: blue;
+}
+
+a:hover{
+    color: green;
+}
+ul li:first-child {
+    font-weight: bold;
+    color: #ff6600;
 }
