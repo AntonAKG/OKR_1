@@ -6,33 +6,100 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body bgcolor="#e0daff">
-    <header>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="books.html">Books</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </header>
+<header>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</header>
 
-    <main>
-        <div class="greeting">
-            <p style="padding-top: 20px">Welcome to <span class="highlight">books</span> world!</p>
-            <button class="button-custom">Explore</button>
-        </div>
-
-
-    </main>
-
-    <footer>
-        <p>footer</p>
-    </footer>
+<main>
+    <div class="greeting" id="greeting">
+    <p style="padding-top: 20px">Welcome to <span class="highlight">books</span> world!</p>
+    <button class="button-custom">Explore</button>
+</div>
 
 
-<style>
-    body{
-        background-color: #e0daff;
+    <section class="intro-text" style="margin-top: 40px; padding: 20px;">
+        <h2 style="color: #4A90E2; text-align: center;">Why Books Matter</h2>
+        <p>Books have been an essential part of human civilization for centuries. They preserve knowledge, spark
+            imagination, and inspire action. Whether it's fiction or non-fiction, books offer a gateway to understanding
+            the world and ourselves.</p>
+        <p>From timeless classics to modern bestsellers, reading opens doors to new perspectives. It encourages critical
+            thinking, enhances vocabulary, and allows us to travel through time and space without leaving our homes.</p>
+        <p>Our website celebrates books across various genres—from finance and self-development to fantasy and science
+            fiction. Start your journey by exploring our curated selections on the <a href="books.html">Books</a> page.
+        </p>
+    </section>
+</main>
+
+<footer>
+    <p style="margin-top: 10px; font-size: 14px;">© 2025 Book World — Empowering minds, one page at a time.</p>
+</footer>
+
+<script src="script.js">
+
+</script>
+
+<script>
+     // Зміна фону на 30 секунд
+    document.body.style.backgroundColor = "#ccffcc";
+    setTimeout(() => {
+        document.body.style.backgroundColor = "#e0daff";
+    }, 30000);
+
+    // Перенаправлення через 10 секунд
+    setTimeout(() => {
+        location.href = "about.html";
+    }, 10000);
+
+    // getElementById
+    let greeting = document.getElementById("greeting");
+    if (greeting) {
+        greeting.innerHTML += " <strong>Маєш чудовий смак до книжок!</strong>";
     }
-</style>
+
+    // querySelectorAll
+    let links = document.querySelectorAll("a");
+    links.forEach(link => {
+        link.style.border = "1px dashed green";
+    });
+
+    // innerHTML, outerHTML, textContent
+    let heading = document.querySelector("h2");
+    if (heading) {
+        console.log("innerHTML:", heading.innerHTML);
+        console.log("outerHTML:", heading.outerHTML);
+        console.log("textContent:", heading.textContent);
+    }
+
+    // document.write
+    document.write("<p style='color: red;'>Цей текст додано через document.write()</p>");
+
+    // Створення елементів і вставка
+    let newParagraph = document.createElement("p");
+    let textNode = document.createTextNode("Новий абзац створено динамічно!");
+    newParagraph.appendChild(textNode);
+
+    document.body.append(newParagraph); // додає в кінець
+    document.body.prepend(newParagraph.cloneNode(true)); // додає на початок
+    document.body.append(" ← це ще один текстовий вузол");
+
+    // replaceWith
+    let button = document.querySelector(".button-custom");
+    if (button) {
+        let newButton = document.createElement("button");
+        newButton.textContent = "Новий Кнопка";
+        newButton.className = "button-custom";
+        button.replaceWith(newButton);
+    }
+
+    // remove()
+    let specialLinks = document.querySelectorAll("a[href*='google']");
+    specialLinks.forEach(link => link.remove());
+</script>
 </body>
+
 </html>
