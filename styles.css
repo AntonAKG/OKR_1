@@ -28,6 +28,7 @@ a:visited {
     color: #800080;
 }
 
+
 .greeting a {
     color: red !important;
     font-weight: bold;
@@ -77,6 +78,7 @@ h1 + p {
     font-style: italic;
     color: #555;
 }
+
 
 main p {
     color: #333399;
@@ -130,6 +132,10 @@ td img {
     border-radius: 10px;
 }
 
+.container-contact{
+    float: left;
+}
+
 footer {
     background-color: #4A90E2;
     color: white;
@@ -142,7 +148,6 @@ footer {
 }
 
 .button-custom {
-    position: relative;
     background-color: #4A90E2;
     color: white;
     border: none;
@@ -191,7 +196,17 @@ a:link{
 a:hover{
     color: green;
 }
-ul li:first-child {
+ul li {
     font-weight: bold;
     color: #ff6600;
 }
+
+#bookList li {
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s;
+  }
+
+  #bookList li.active {
+    background-color: lightblue;
+  }

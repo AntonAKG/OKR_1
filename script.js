@@ -37,3 +37,56 @@ function compareStrings(str1, str2) {
 }
 
 compareStrings("JavaScript", "HTML");
+
+// Призначення обробника через властивість DOM
+document.getElementById("ShareBtn").onclick = function() {
+    alert("thanks");
+};
+
+
+// Використання addEventListener з кількома обробниками
+function firstHandler() {
+    console.log("First handler executed.");
+}
+
+function secondHandler() {
+    console.log("Second handler executed.");
+}
+
+var shareButton = document.getElementById("ShareBtn");
+shareButton.addEventListener("click", firstHandler);
+shareButton.addEventListener("click", secondHandler);
+
+//  Використання об'єкта з методом handleEvent
+var bookHandler = {
+    handleEvent: function(event) {
+        alert("Event handled by bookHandler on element: " + event.currentTarget.tagName);
+    }
+};
+
+shareButton.addEventListener("click", bookHandler);
+
+// Видалення обробника події
+shareButton.removeEventListener("click", secondHandler);
+
+var menu = document.getElementById("menu");
+
+menu.addEventListener("click", function(event) {
+    if (event.target.tagName === "BUTTON") {
+        var action = event.target.getAttribute("data-action");
+        switch (action) {
+            case "home":
+                window.location.href = "index.html";
+                break;
+            case "about":
+                window.location.href = "about.html";
+                break;
+            case "books":
+                window.location.href = "books.html";
+                break;
+            case "contact":
+                window.location.href = "contact.html";
+                break;
+        }
+    }
+});

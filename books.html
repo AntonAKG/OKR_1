@@ -26,6 +26,14 @@
             <li><a href="#horror">Horror</a></li>
             <li><a href="#non-fiction">Non-fiction</a></li>
         </ol>
+
+        <ul id="bookList">
+          <li>Rich Dad Poor Dad</li>
+          <li>The Richest Man in Babylon</li>
+          <li>The Psychology of Money</li>
+        </ul>
+
+
     </div>
 
     <div class="list-books">
@@ -58,7 +66,9 @@
             </tr>
         </table>
 
+
     </div>
+
 
 </main>
 
@@ -67,5 +77,25 @@
         <p style="margin-top: 10px; font-size: 14px;">© 2025 Book World — Empowering minds, one page at a time.</p>
 
     </footer>
+
+
+<script src="script.js">
+
+</script>
+
+<script>
+    const bookList = document.getElementById("bookList");
+
+    bookList.onclick = function(event) {
+    const clickedItem = event.target;
+
+    if (clickedItem.tagName === "LI") {
+        const items = bookList.querySelectorAll("li");
+        items.forEach(item => item.classList.remove("active"));
+        clickedItem.classList.add("active");
+    }
+  };
+</script>
+
 </body>
 </html>

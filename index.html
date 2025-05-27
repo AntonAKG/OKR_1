@@ -4,22 +4,56 @@
     <meta charset="UTF-8">
     <title>Home</title>
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+      #menu {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      #menu button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #f0f0f0;
+        border: 2px solid #0077cc;
+        border-radius: 8px;
+        color: #0077cc;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      #menu button:hover {
+        background-color: #0077cc;
+        color: #ffffff;
+      }
+
+      #menu button:active {
+        transform: scale(0.97);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) inset;
+      }
+    </style>
+
 </head>
 <body bgcolor="#e0daff">
 <header>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="books.html">Books</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
+
+
+    <div id="menu">
+        <button data-action="home">Home</button>
+        <button data-action="about">About</button>
+        <button data-action="books">Books</button>
+        <button data-action="contact">Contact</button>
+    </div>
+
 </header>
 
 <main>
     <div class="greeting" id="greeting">
-    <p style="padding-top: 20px">Welcome to <span class="highlight">books</span> world!</p>
-    <button class="button-custom">Explore</button>
-</div>
+        <p style="padding-top: 20px">Welcome to <span class="highlight">books</span> world!</p>
+        <button id="exploreBtn" class="button-custom">Explore</button>
+
+    </div>
 
 
     <section class="intro-text" style="margin-top: 40px; padding: 20px;">
@@ -27,6 +61,8 @@
         <p>Books have been an essential part of human civilization for centuries. They preserve knowledge, spark
             imagination, and inspire action. Whether it's fiction or non-fiction, books offer a gateway to understanding
             the world and ourselves.</p>
+
+        <button id="ShareBtn">Share Your Contact</button>
         <p>From timeless classics to modern bestsellers, reading opens doors to new perspectives. It encourages critical
             thinking, enhances vocabulary, and allows us to travel through time and space without leaving our homes.</p>
         <p>Our website celebrates books across various genres—from finance and self-development to fantasy and science
