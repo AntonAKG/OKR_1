@@ -23,11 +23,14 @@
         </div>
 
 
+
+<!--        <img src="book-mockup-2.png" id="draggable" style="width: 150px; height: 150px;" alt="img">-->
+
         <div class="favorite-book">
            <p>Here are some of my favorite books:</p>
             <ul>
-              <li id="fav-book-1">Rich dad poor dad</li>
-              <li>The richest man in Babylon</li>
+              <li class="hover-item" id="fav-book-1">Rich dad poor dad</li>
+              <li class="hover-item">The richest man in Babylon</li>
             </ul>
 
             <p><a href="books.html#fav-book-1">Jump to my favorite book on Books page</a></p>
@@ -45,5 +48,57 @@
 <script src="script.js">
 
 </script>
+
+<script>
+  const hoverItems = document.querySelectorAll('.hover-item');
+
+  hoverItems.forEach(item => {
+    item.addEventListener('mouseover', (event) => {
+      event.target.style.backgroundColor = '#06387a';
+      console.log('Mouse entered:', event.target.textContent);
+      if (event.relatedTarget) {
+        console.log('Came from:', event.relatedTarget.textContent || event.relatedTarget.tagName);
+      }
+    });
+
+    item.addEventListener('mouseout', (event) => {
+      event.target.style.backgroundColor = '';
+      console.log('Mouse left:', event.target.textContent);
+      if (event.relatedTarget) {
+        console.log('Moved to:', event.relatedTarget.textContent || event.relatedTarget.tagName);
+      }
+    });
+  });
+
+
+//   DRAG&DROP
+  const draggable = document.getElementById('draggable');
+  let offsetX = 0;
+  let offsetY = 0;
+  let isDragging = false;
+
+  draggable.addEventListener('mousedown', (event) => {
+    offsetX = event.clientX - draggable.offsetLeft;
+    offsetY = event.clientY - draggable.offsetTop;
+    isDragging = true;
+    draggable.style.opacity = '0.7';
+  });
+
+  document.addEventListener('mousemove', (event) => {
+    if (isDragging) {
+      draggable.style.left = `${event.clientX - offsetX}px`;
+      draggable.style.top = `${event.clientY - offsetY}px`;
+    }
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (isDragging) {
+      isDragging = false;
+      draggable.style.opacity = '1';
+    }
+  });
+
+</script>
+
 </body>
 </html>

@@ -16,7 +16,7 @@ function userDialog() {
     }
 }
 
-userDialog();
+// userDialog();
 
 // Функція з параметрами (один — за замовчуванням)
 function developerInfo(lastName, firstName, position = "Front-end Developer") {

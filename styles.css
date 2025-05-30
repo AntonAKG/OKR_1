@@ -89,11 +89,11 @@ ul > li {
     font-weight: normal;
 }
 
-#fav-book-1 {
-    background-color: #ffffcc;
-    padding: 5px;
-    border-left: 5px solid #ff6600;
-}
+/*#fav-book-1 {*/
+/*    background-color: #ffffcc;*/
+/*    padding: 5px;*/
+/*    border-left: 5px solid #ff6600;*/
+/*}*/
 
 ul, ol {
     padding-left: 20px;
